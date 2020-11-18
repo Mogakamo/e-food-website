@@ -42,7 +42,49 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+.dropbtn {
+    background-color:#b0b435;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    right: 0;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 140px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: red;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: black;
+}
+</style>
 </head>
 
 <body>
@@ -71,10 +113,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="">
-							<option>Register Here</option>
-							
-						</select>
+                        <div class="dropdown" style="float:right;">
+        <button class="dropbtn"><a href="logout.php">LOGOUT</a></button>
+        <!---<div class="dropdown-content">
+          <a href="#">logout</a>
+          <a href="#">Reset Password</a>
+          
+        </div>----->
+      </div>
+                        <!-----left out code--->
+
+
+                        <!---<p><a href="logout.php">LOGOUT</a></p>---
+						<select id="basic" class="selectpicker form-control" data-placeholder="">
+							<option><a href="logout.php">LOGOUT</a></option>
+                            <option>RESET PASSWORD</option>
+                            <option><a href="logout.php">LOGOUT</a></option>
+						</select>---->
 					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
@@ -122,14 +177,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/log" class="logo" alt=""><h1>E-Food</h1></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/log" class="logo" alt=""><h1>E-Food</h1></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
